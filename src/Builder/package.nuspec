@@ -2,7 +2,7 @@
 <package>
 	<metadata>
 		<id>Find.By</id>
-		<version>0.0.3</version>
+		<version>1.0.2</version>
 		<authors>MYSLYVETS</authors>
 		<owners>MYSLYVETS</owners>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -11,6 +11,10 @@
 		<dependencies>
 			<dependency id="Wave" version="3.0" />
 		</dependencies>
+		<iconUrl>http://www.myslyvets.com/wp-content/uploads/2016/04/icon.png</iconUrl>
+		<projectUrl>http://www.myslyvets.com/?p=81</projectUrl>
+		<copyright>MYSLYVETS</copyright>
+		<summary>Finding &amp; Verifying Locators</summary>
 	</metadata>
 	<files>
 		<file src="..\Find.By.Infrastructure\bin\Debug\Find.By.Infrastructure.dll" target="dotFiles\" />

@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace Find.By.Tests
 {
     [TestFixture]
-    public class VerifyLocatorInBrowserContextActionTests : CSharpContextActionExecuteTestBase<IprVerifyLocatorInBrowserContextAction>
+    public class VerifyLocatorInBrowserContextActionTests : CSharpContextActionExecuteTestBase<VerifyLocatorInBrowserContextAction>
     {
         protected override string ExtraPath => "VerifyLocatorInBrowserContextActionTests";
 

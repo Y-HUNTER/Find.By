@@ -10,12 +10,12 @@ using JetBrains.Util;
 
 namespace Find.By.Core
 {
-    [ContextAction(Group = "C#", Name = "Locator verification", Description = "Shows the locator in browser")]
-    public class IprVerifyLocatorInBrowserContextAction : ContextActionBase
+    [ContextAction(Group = "C#", Name = "Locator verification", Description = "Finding & Verifying locators")]
+    public class VerifyLocatorInBrowserContextAction : ContextActionBase
     {
         private ICSharpContextActionDataProvider Provider { get; set; }
 
-        public IprVerifyLocatorInBrowserContextAction(ICSharpContextActionDataProvider provider)
+        public VerifyLocatorInBrowserContextAction(ICSharpContextActionDataProvider provider)
         {
             Provider = provider;
         }

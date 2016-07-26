@@ -3,7 +3,7 @@
     interface ILocatorValidator
     {
         bool IsValid { get; }
-        string ErrorMessage { get; } 
+        string ErrorMessage { get; }
     }
 
     public abstract class ValidatorBase : ILocatorValidator

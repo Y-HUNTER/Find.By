@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using JetBrains.ReSharper.Psi.CSharp.Tree;
+﻿using JetBrains.ReSharper.Psi.CSharp.Tree;
 
 namespace Find.By.Core.Ipr
 {
@@ -14,9 +9,13 @@ namespace Find.By.Core.Ipr
             string name = attribute.Name.ShortName;
             if (name == "FindsBy" && attribute.PropertyAssignments.Count >= 2)
             {
-                Attribute result = new Attribute();
-                result.How = GetHow(attribute);
+                Attribute result = new Attribute
+                {
+                    IsLocator = true,
+                    How = GetHow(attribute)
+                };
                 result.Value = GetValue(attribute, result);
+                return result;
             }
             return null;
         }

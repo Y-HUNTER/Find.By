@@ -6,7 +6,7 @@ namespace Find.By.Core
 {
     public class Attribute
     {
-        private static List<ILocatorParser> _parsers = new List<ILocatorParser>()
+        private static readonly List<ILocatorParser> Parsers = new List<ILocatorParser>
         {
             new IpreoLocatorParser(),
             new SeleniumLocatorParser()
@@ -18,7 +18,7 @@ namespace Find.By.Core
 
         public static Attribute Parse(IAttribute attribute)
         {
-            foreach (ILocatorParser parser in _parsers)
+            foreach (ILocatorParser parser in Parsers)
             {
                 Attribute locator = parser.Parse(attribute);
                 if (locator != null) return locator;

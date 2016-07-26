@@ -154,17 +154,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ipr\Attribute.cs" />
+    <Compile Include="Attributes\Attribute.cs" />
     <Compile Include="Deamon.cs" />
-    <Compile Include="Ipr\ILocatorParser.cs" />
-    <Compile Include="Ipr\IpreoLocatorParser.cs" />
-    <Compile Include="Ipr\LocatorFactory.cs" />
-    <Compile Include="Ipr\SeleniumLocatorParser.cs" />
+    <Compile Include="Attributes\Parsers\ILocatorParser.cs" />
+    <Compile Include="Attributes\Parsers\IpreoLocatorParser.cs" />
+    <Compile Include="Attributes\LocatorFactory.cs" />
+    <Compile Include="Attributes\Parsers\SeleniumLocatorParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validators\CssValidator.cs" />
     <Compile Include="Validators\FakeValidator.cs" />
     <Compile Include="Validators\ValidatorBase.cs" />
-    <Compile Include="ContextAction\IprVerifyLocatorInBrowserContextAction.cs" />
+    <Compile Include="ContextAction\VerifyLocatorInBrowserContextAction.cs" />
     <Compile Include="Validators\ValidatorFactory.cs" />
     <Compile Include="Validators\XPathValidator.cs" />
     <Compile Include="Analyzer\LocatorErrorHighlighting.cs" />

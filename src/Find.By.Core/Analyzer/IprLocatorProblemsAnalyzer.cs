@@ -6,8 +6,8 @@ using JetBrains.ReSharper.Psi.Tree;
 
 namespace Find.By.Core
 {
-    [ElementProblemAnalyzer(typeof (IAttribute), HighlightingTypes = new[] {typeof (LocatorErrorHighlighting)})]
-    internal class IprLocatorProblemsAnalyzer : ElementProblemAnalyzer<IAttribute>
+    [ElementProblemAnalyzer(typeof(IAttribute), HighlightingTypes = new[] { typeof(LocatorErrorHighlighting) })]
+    public class IprLocatorProblemsAnalyzer : ElementProblemAnalyzer<IAttribute>
     {
         protected override void Run(IAttribute element, ElementProblemAnalyzerData data, IHighlightingConsumer consumer)
         {

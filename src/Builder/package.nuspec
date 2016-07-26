@@ -2,14 +2,14 @@
 <package>
 	<metadata>
 		<id>Find.By</id>
-		<version>4.0.0</version>
+		<version>5.0.0</version>
 		<authors>MYSLYVETS</authors>
 		<owners>MYSLYVETS</owners>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Find.By - highlights elemets in browser by Selenium locators</description>
 		<tags>selenium automation locator highlight</tags>
 		<dependencies>
-			<dependency id="Wave" version="[4.0]" />
+			<dependency id="Wave" version="[5.0]" />
 		</dependencies>
 		<iconUrl>http://www.myslyvets.com/wp-content/uploads/2016/04/icon.png</iconUrl>
 		<projectUrl>http://www.myslyvets.com/?p=81</projectUrl>

@@ -1,14 +1,23 @@
 chrome.runtime.onMessage.addListener(
-  function(request) {
-    if(request.isRunning){
-        showLocator(request.locator);
-    }else {
-        removeHighlighting();
-    }
-  }
+	function (request, sender, sendResponse) {
+		if (request.isRunning) {
+			showLocator(request.locator);
+			sendResponse({ number: getLocatorsNumber() });
+		} else {
+			removeHighlighting();
+		}
+	}
 );
 
-$(document).ready(function() {
+function getLocatorsNumber() {
+	var number = $(".locator").length;
+	if (number > 99)
+		return "99+"
+	else
+		return number.toString();
+}
+
+$(document).ready(function () {
 	addLocatorClass();
 });
 
@@ -18,68 +27,70 @@ function addLocatorClass() {
 
 function showLocator(data) {
     var responce = $.parseJSON(data);
-    if(responce.Status=="Ok"){
+    if (responce.Status == "Ok") {
         removeHighlighting();
         addHighlighting(responce);
-    }	
+    }
 }
 
 function addHighlighting(locator) {
-	switch(locator.By) {
+	switch (locator.By) {
 		case "ClassName":
-			var className = "."+locator.Value;
-    		HighlightJQuery(className);
-        	break;
+			var className = "." + locator.Value;
+			HighlightJQuery(className);
+			break;
         case "CssSelector":
-        	HighlightJQuery(locator.Value);
-        	break;
+			HighlightJQuery(locator.Value);
+			break;
         case "Id":
-    		var id = "#"+locator.Value;
-    		HighlightJQuery(id);
-        	break;
+			var id = "#" + locator.Value;
+			HighlightJQuery(id);
+			break;
         case "LinkText":
-        	var linkText = "//a[text()='".concat(locator.Value, "']");
-        	HighlightXPath(linkText);
-        	break;
+			var linkText = "//a[text()='".concat(locator.Value, "']");
+			HighlightXPath(linkText);
+			break;
         case "Name":
-        	var name = "[name='".concat(locator.Value, "']");
-        	HighlightJQuery(name);
-        	break;
+			var name = "[name='".concat(locator.Value, "']");
+			HighlightJQuery(name);
+			break;
         case "PartialLinkText":
-        	var link = "a:contains('" + locator.Value + "')";
-        	HighlightJQuery(link);
-          	break;
+			var link = "a:contains('" + locator.Value + "')";
+			HighlightJQuery(link);
+			break;
         case "TagName":
-        	HighlightJQuery(locator.Value);
-        	break;
-    	case "XPath":
-    		HighlightXPath(locator.Value);
-        	break;
+			HighlightJQuery(locator.Value);
+			break;
+		case "XPath":
+			HighlightXPath(locator.Value);
+			break;
 	}
 }
 
 function HighlightJQuery(jquery) {
-	$(jquery).each(function() {
-		$(this).addClass('locator'); 
+	$(jquery).each(function () {
+		$(this).addClass('locator');
 	});
 }
 
 function HighlightXPath(xpath) {
-	$(document).xpath(xpath).each(function() {
-		$(this).addClass('locator'); 
+	$(document).xpath(xpath).each(function () {
+		$(this).addClass('locator');
 	});
 }
 
 function removeHighlighting() {
-	$(".locator").each(function() {
-		$(this).removeClass('locator'); 
+	$(".locator").each(function () {
+		$(this).removeClass('locator');
 	});
 }
 // Google Analytics
- (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+(function (i, s, o, g, r, a, m) {
+	i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+		(i[r].q = i[r].q || []).push(arguments)
+	}, i[r].l = 1 * new Date(); a = s.createElement(o),
+		m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-70310002-2', 'auto');
-  ga('send', 'pageview');
+ga('create', 'UA-70310002-2', 'auto');
+ga('send', 'pageview');

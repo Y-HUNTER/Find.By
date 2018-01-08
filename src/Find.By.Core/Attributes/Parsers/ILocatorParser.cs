@@ -1,6 +1,6 @@
 ﻿using JetBrains.ReSharper.Psi.CSharp.Tree;
 
-namespace Find.By.Core.Ipr
+namespace Find.By.Core.Attributes.Parsers
 {
     interface ILocatorParser
     {

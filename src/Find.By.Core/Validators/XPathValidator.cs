@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Xml;
 using System.Xml.XPath;
-using Find.By.Core.Validators;
 
-namespace Find.By.Core
+namespace Find.By.Core.Validators
 {
     public class XPathValidator : ValidatorBase
     {
@@ -14,7 +13,7 @@ namespace Find.By.Core
 
         private void ValidateExpression(string expression)
         {
-            XmlDocument document = new XmlDocument();
+            var document = new XmlDocument();
             var navigator = document.CreateNavigator();
             try
             {

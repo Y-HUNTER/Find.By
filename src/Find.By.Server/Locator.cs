@@ -12,16 +12,4 @@
 
         public string Value { get; private set; }
     }
-
-    public enum By
-    {
-        ClassName,
-        CssSelector,
-        Id,
-        LinkText,
-        Name,
-        PartialLinkText,
-        TagName,
-        XPath
-    }
 }

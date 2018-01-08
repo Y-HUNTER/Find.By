@@ -2,23 +2,22 @@
 <package>
 	<metadata>
 		<id>Find.By</id>
-		<version>5.0.0</version>
-		<authors>MYSLYVETS</authors>
-		<owners>MYSLYVETS</owners>
+		<version>2017.3.1</version>
+		<authors>Yura Hunter</authors>
+		<owners>Yura Hunter</owners>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Find.By - highlights elemets in browser by Selenium locators</description>
-		<tags>selenium automation locator highlight</tags>
+		<tags>selenium automation locator find.by</tags>
 		<dependencies>
-			<dependency id="Wave" version="[5.0]" />
+			<dependency id="Wave" version="11.0.0" />
 		</dependencies>
-		<iconUrl>http://www.myslyvets.com/wp-content/uploads/2016/04/icon.png</iconUrl>
-		<projectUrl>http://www.myslyvets.com/?p=81</projectUrl>
-		<copyright>MYSLYVETS</copyright>
-		<summary>Finding &amp; Verifying Locators</summary>
+		<iconUrl>http://aqa.works/img/findby-icon.png</iconUrl>
+		<projectUrl>http://aqa.works/findby</projectUrl>
+		<copyright>Yura Hunter</copyright>
+		<summary>Find &amp; Verify locators</summary>
 	</metadata>
 	<files>
-		<file src="..\Find.By.Infrastructure\bin\Debug\Find.By.Infrastructure.dll" target="dotFiles\" />
-		<file src="..\Find.By.Infrastructure\bin\Debug\Find.By.Infrastructure.pdb" target="dotFiles\" />
+		<file src="..\Find.By.Server\bin\Debug\log4net.dll" target="dotFiles\" />
 		<file src="..\Find.By.Server\bin\Debug\Find.By.Server.dll" target="dotFiles\" />
 		<file src="..\Find.By.Server\bin\Debug\Find.By.Server.pdb" target="dotFiles\" />
 		<file src="..\Find.By.Core\bin\Debug\Find.By.Core.dll" target="dotFiles\" />

@@ -4,7 +4,7 @@ using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 
-namespace Find.By.Core
+namespace Find.By.Core.Analyzer
 {
     [StaticSeverityHighlighting(Severity.ERROR, CSharpLanguage.Name)]
     public class LocatorErrorHighlighting : IHighlighting
@@ -14,7 +14,6 @@ namespace Find.By.Core
             Literal = literal;
             ToolTip = toolTips;
             ErrorStripeToolTip = string.Empty;
-            NavigationOffsetPatch = 0;
         }
 
         private ICSharpLiteralExpression Literal { get; }
@@ -29,8 +28,7 @@ namespace Find.By.Core
             throw new NotImplementedException();
         }
 
-        public string ToolTip { get; private set; }
+        public string ToolTip { get; }
         public string ErrorStripeToolTip { get; }
-        public int NavigationOffsetPatch { get; }
     }
 }

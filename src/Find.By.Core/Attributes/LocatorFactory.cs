@@ -1,6 +1,6 @@
 ﻿using Find.By.Server;
 
-namespace Find.By.Core
+namespace Find.By.Core.Attributes
 {
     public static class LocatorFactory
     {

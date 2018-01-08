@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
-using Find.By.Core.Ipr;
+using Find.By.Core.Attributes.Parsers;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 
-namespace Find.By.Core
+namespace Find.By.Core.Attributes
 {
     public class Attribute
     {
         private static readonly List<ILocatorParser> Parsers = new List<ILocatorParser>
         {
-            new IpreoLocatorParser(),
+            new LocatorParser(),
             new SeleniumLocatorParser()
         };
 
@@ -20,7 +20,7 @@ namespace Find.By.Core
         {
             foreach (ILocatorParser parser in Parsers)
             {
-                Attribute locator = parser.Parse(attribute);
+                var locator = parser.Parse(attribute);
                 if (locator != null) return locator;
             }
             return new Attribute();

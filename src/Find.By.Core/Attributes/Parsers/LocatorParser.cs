@@ -1,8 +1,8 @@
 ﻿using JetBrains.ReSharper.Psi.CSharp.Tree;
 
-namespace Find.By.Core.Ipr
+namespace Find.By.Core.Attributes.Parsers
 {
-    class IpreoLocatorParser : ILocatorParser
+    class LocatorParser : ILocatorParser
     {
         public Attribute Parse(IAttribute attribute)
         {

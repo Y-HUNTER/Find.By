@@ -2,14 +2,14 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using Find.By.Core.Logging;
+using log4net;
 
 namespace Find.By.Server
 {
     public class HostServer
     {
         private const int PORT = 32081;
-        private readonly Logger _logger = Logger.GetLogger();
+        private readonly ILog _logger = LogManager.GetLogger(typeof(HostServer));
         private bool _isServerRunning;
         private readonly TcpListener _listener = new TcpListener(IPAddress.Parse("127.0.0.1"), PORT);
 
@@ -58,9 +58,9 @@ namespace Find.By.Server
                         Request request = new Request(socket);
                         Response response = new Response();
                         if (Locator == null)
-                            socket.Send(response.Empty);
+                            request.Send(response.Empty);
                         else
-                            socket.Send(response.Generate(Locator));
+                            request.Send(response.Generate(Locator));
                         Locator = null;
                     }
                     catch (Exception ex)

@@ -1,6 +1,8 @@
-﻿namespace Find.By.Core.Validators
+﻿using Find.By.Core.Attributes;
+
+namespace Find.By.Core.Validators
 {
-    static class ValidatorFactory
+    public static class ValidatorFactory
     {
         public static ILocatorValidator CreateValidator(Attribute attribute)
         {
